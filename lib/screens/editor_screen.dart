@@ -223,7 +223,7 @@ class _EditorScreenState extends State<EditorScreen> {
   }
 
   void _showAddElementsBottomSheet(BuildContext context) {
-    final primaryColor = const Color(0xFF7D2AE8);
+    const primaryColor = Color(0xFF7D2AE8);
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -353,7 +353,7 @@ class _EditorScreenState extends State<EditorScreen> {
     final textPrimary = isDark ? Colors.white : const Color(0xFF1A1A2E);
     final textSecondary = isDark ? const Color(0xFFB0B0B8) : const Color(0xFF6B6B80);
     final borderColor = isDark ? const Color(0xFF3A3A4A) : const Color(0xFFE8E8EE);
-    final primaryColor = const Color(0xFF7D2AE8);
+    const primaryColor = Color(0xFF7D2AE8);
 
     // Sort elements by zIndex for rendering
     final sortedElements = List<DesignElement>.from(_project.elements)
@@ -625,12 +625,12 @@ class _EditorScreenState extends State<EditorScreen> {
     Color primaryColor,
   ) {
     final tools = [
-      EditorToolItem(EditorTool.select, Icons.mouse_rounded, 'Pilih', 'V'),
-      EditorToolItem(EditorTool.text, Icons.text_fields_rounded, 'Teks', 'T'),
-      EditorToolItem(EditorTool.elements, Icons.widgets_rounded, 'Elemen', 'E'),
-      EditorToolItem(EditorTool.upload, Icons.upload_file_rounded, 'Unggah', 'U'),
-      EditorToolItem(EditorTool.color, Icons.palette_outlined, 'Warna', 'C'),
-      EditorToolItem(EditorTool.effects, Icons.auto_awesome_outlined, 'Efek', 'F'),
+      const EditorToolItem(EditorTool.select, Icons.mouse_rounded, 'Pilih', 'V'),
+      const EditorToolItem(EditorTool.text, Icons.text_fields_rounded, 'Teks', 'T'),
+      const EditorToolItem(EditorTool.elements, Icons.widgets_rounded, 'Elemen', 'E'),
+      const EditorToolItem(EditorTool.upload, Icons.upload_file_rounded, 'Unggah', 'U'),
+      const EditorToolItem(EditorTool.color, Icons.palette_outlined, 'Warna', 'C'),
+      const EditorToolItem(EditorTool.effects, Icons.auto_awesome_outlined, 'Efek', 'F'),
     ];
 
     return Container(
@@ -906,7 +906,7 @@ class _EditorScreenState extends State<EditorScreen> {
               fit: StackFit.expand,
               children: [
                 // Elements
-                ...elements.map((element) => _buildElementWidget(element, primaryColor)).toList(),
+                ...elements.map((element) => _buildElementWidget(element, primaryColor)),
                 
                 // Selection handles for selected element
                 if (_selectedElement != null)
@@ -1779,7 +1779,7 @@ class SelectionHandlesPainter extends CustomPainter {
       ..color = primaryColor
       ..style = PaintingStyle.fill;
     
-    final handleSize = 12.0;
+    const handleSize = 12.0;
     final handleRadius = handleSize / 2;
     
     // Draw bounding box
@@ -1788,7 +1788,7 @@ class SelectionHandlesPainter extends CustomPainter {
     
     // Draw corner handles
     final corners = [
-      Offset(0, 0), // top-left
+      const Offset(0, 0), // top-left
       Offset(size.width, 0), // top-right
       Offset(size.width, size.height), // bottom-right
       Offset(0, size.height), // bottom-left
@@ -1889,7 +1889,7 @@ class StarPainter extends CustomPainter {
     final center = Offset(size.width / 2, size.height / 2);
     final outerRadius = size.width / 2;
     final innerRadius = size.width / 4;
-    final spikes = 5;
+    const spikes = 5;
     
     for (int i = 0; i < spikes * 2; i++) {
       final radius = i.isEven ? outerRadius : innerRadius;

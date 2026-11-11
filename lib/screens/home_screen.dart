@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final borderColor = isDark ? const Color(0xFF3A3A4A) : const Color(0xFFE8E8EE);
     final textPrimary = isDark ? Colors.white : const Color(0xFF1A1A2E);
     final textSecondary = isDark ? const Color(0xFFB0B0B8) : const Color(0xFF6B6B80);
-    final primaryColor = const Color(0xFF7D2AE8);
+    const primaryColor = Color(0xFF7D2AE8);
 
     return SafeArea(
       child: CustomScrollView(
@@ -122,10 +122,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   const SizedBox(width: 8),
                   // Profile avatar
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 18,
-                    backgroundColor: const Color(0xFFE6D8FF),
-                    child: const Text(
+                    backgroundColor: Color(0xFFE6D8FF),
+                    child: Text(
                       'U',
                       style: TextStyle(
                         color: Color(0xFF6420C8),

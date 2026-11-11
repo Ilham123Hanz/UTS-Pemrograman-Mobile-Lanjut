@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 import 'screens/templates_screen.dart';
 import 'screens/projects_screen.dart';
+import 'screens/profile_screen.dart';
+import 'screens/ai_canva_screen.dart'; // Import layar AI Canva yang baru
 
 void main() {
   runApp(const CanvaPracticeApp());
@@ -48,12 +50,16 @@ class MainNavigation extends StatefulWidget {
 }
 
 class _MainNavigationState extends State<MainNavigation> {
-  int selectedIndex = 0;
+  // Atur halaman awal yang aktif. Jika ingin otomatis buka AI Canva, ubah jadi 3.
+  int selectedIndex = 0; 
 
+  // Daftar halaman berdasarkan urutan di screenshot terbaru
   final pages = const [
     HomeScreen(),
+    ProjectsScreen(), // Desain Anda
     TemplatesScreen(),
-    ProjectsScreen(),
+    AiCanvaScreen(),  // AI Canva yang baru
+    ProfileScreen(),  // Menu Lainnya
   ];
 
   @override
@@ -72,14 +78,24 @@ class _MainNavigationState extends State<MainNavigation> {
             label: 'Beranda',
           ),
           NavigationDestination(
+            icon: Icon(Icons.folder_open_outlined),
+            selectedIcon: Icon(Icons.folder_rounded),
+            label: 'Desain Anda',
+          ),
+          NavigationDestination(
             icon: Icon(Icons.grid_view_rounded),
             selectedIcon: Icon(Icons.dashboard_rounded),
             label: 'Template',
           ),
           NavigationDestination(
-            icon: Icon(Icons.folder_open_outlined),
-            selectedIcon: Icon(Icons.folder_rounded),
-            label: 'Proyek',
+            icon: Icon(Icons.auto_awesome_outlined), // Ikon bintang untuk AI
+            selectedIcon: Icon(Icons.auto_awesome, color: Color(0xFF7D2AE8)),
+            label: 'AI Canva',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.more_horiz_rounded),
+            selectedIcon: Icon(Icons.more_horiz_rounded),
+            label: 'Lainnya',
           ),
         ],
       ),

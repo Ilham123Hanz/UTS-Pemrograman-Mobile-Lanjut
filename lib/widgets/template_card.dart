@@ -25,7 +25,7 @@ class _TemplateCardState extends State<TemplateCard> {
     final borderColor = isDark ? const Color(0xFF3A3A4A) : const Color(0xFFE8E8EE);
     final textPrimary = isDark ? Colors.white : const Color(0xFF1A1A2E);
     final textSecondary = isDark ? const Color(0xFFB0B0B8) : const Color(0xFF6B6B80);
-    final primaryColor = const Color(0xFF7D2AE8);
+    const primaryColor = Color(0xFF7D2AE8);
 
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
@@ -185,12 +185,12 @@ class _TemplateCardState extends State<TemplateCard> {
                                         ),
                                       ],
                                     ),
-                                    child: Row(
+                                    child: const Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        const Icon(Icons.add_rounded, size: 18, color: Colors.white),
-                                        const SizedBox(width: 8),
-                                        const Text(
+                                        Icon(Icons.add_rounded, size: 18, color: Colors.white),
+                                        SizedBox(width: 8),
+                                        Text(
                                           'Gunakan template ini',
                                           style: TextStyle(
                                             color: Colors.white,

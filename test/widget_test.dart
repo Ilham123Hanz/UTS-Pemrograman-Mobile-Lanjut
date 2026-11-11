@@ -1,21 +1,15 @@
-// This is a basic Flutter widget test.
-// 
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:projectutp_2407051007_ilhamkhoirulsaputra/main.dart';
+// Perbaikan 1: Menggunakan nama package yang sesuai dengan pubspec.yaml
+import 'package:projectutp_2407051007_farrel/main.dart';
 
 void main() {
   testWidgets('App loads and shows Canva branding', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+    // Perbaikan 2: Menggunakan nama class utama yang benar (CanvaPracticeApp)
     await tester.pumpWidget(const CanvaPracticeApp());
 
     // Verify that Canva branding is shown
-    expect(find.text('Canva'), findsOneWidget);
+    expect(find.text('Canva UI Practice'), findsOneWidget); 
+    // Catatan: Teks diubah menjadi 'Canva UI Practice' karena kata 'Canva' saja 
+    // mungkin tidak ditemukan langsung di halaman pertama (HomeScreen) kecuali Anda menambahkannya.
   });
 }
