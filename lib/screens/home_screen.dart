@@ -4,6 +4,10 @@ import '../models/design_template.dart';
 import '../screens/editor_screen.dart';
 import '../screens/templates_screen.dart';
 import '../widgets/template_card.dart';
+import '../widgets/hero_banner.dart';
+import '../widgets/category_chips.dart';
+import '../widgets/template_grid.dart';
+import '../widgets/empty_state.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -58,39 +62,6 @@ class _HomeScreenState extends State<HomeScreen> {
           template.tags.any((tag) => tag.toLowerCase().contains(_searchQuery.toLowerCase()));
       return categoryMatch && searchMatch;
     }).toList();
-  }
-
-  Widget _buildCategoryChip(BuildContext context, String category, bool selected, Color primaryColor, Color textPrimary, Color cardColor, Color borderColor) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 12),
-      child: ChoiceChip(
-        label: Text(
-          category,
-          style: TextStyle(
-            color: selected ? Colors.white : textPrimary,
-            fontWeight: selected ? FontWeight.w600 : FontWeight.w500,
-            fontSize: 14,
-          ),
-        ),
-        selected: selected,
-        onSelected: (_) => setState(() => _selectedCategory = category),
-        selectedColor: primaryColor,
-        backgroundColor: cardColor,
-        side: BorderSide(
-          color: selected ? Colors.transparent : borderColor,
-          width: 1.5,
-        ),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(28),
-        ),
-        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        visualDensity: VisualDensity.compact,
-        elevation: selected ? 2 : 0,
-        pressElevation: 4,
-        shadowColor: primaryColor.withValues(alpha: 0.3),
-      ),
-    );
   }
 
   @override
@@ -247,14 +218,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 8),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: _categories.map((category) {
-                        final selected = _selectedCategory == category;
-                        return _buildCategoryChip(context, category, selected, primaryColor, textPrimary, cardColor, borderColor);
-                      }).toList(),
-                    ),
+                  CategoryChips(
+                    categories: _categories,
+                    selectedCategory: _selectedCategory,
+                    onCategorySelected: (category) => setState(() => _selectedCategory = category),
+                    primaryColor: primaryColor,
+                    textPrimary: textPrimary,
+                    cardColor: cardColor,
+                    borderColor: borderColor,
                   ),
                 ],
               ),
@@ -263,90 +234,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
           // Hero Banner / Quick Actions
           SliverToBoxAdapter(
-            child: Container(
-              margin: const EdgeInsets.fromLTRB(24, 16, 24, 0),
-              padding: const EdgeInsets.all(28),
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [Color(0xFF7D2AE8), Color(0xFF4B61D1)],
-                ),
-                borderRadius: BorderRadius.circular(28),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFF7D2AE8).withValues(alpha: 0.35),
-                    blurRadius: 24,
-                    offset: const Offset(0, 10),
-                    spreadRadius: 2,
-                  ),
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Mulai desain Anda hari ini',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 28,
-                      fontWeight: FontWeight.w800,
-                      height: 1.2,
-                      letterSpacing: -0.5,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    'Pilih template profesional dan buat desain menakjubkan dalam hitungan menit.',
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.92),
-                      fontSize: 16,
-                      height: 1.5,
-                    ),
-                  ),
-                  const SizedBox(height: 24),
-                  Row(
-                    children: [
-                      FilledButton.icon(
-                        style: FilledButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          foregroundColor: const Color(0xFF6420C8),
-                          padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 16),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          textStyle: const TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          elevation: 0,
-                        ),
-                        onPressed: () => _openEditor(context, designTemplates.first),
-                        icon: const Icon(Icons.add_rounded, size: 20),
-                        label: const Text('Buat desain baru'),
-                      ),
-                      const SizedBox(width: 16),
-                      OutlinedButton.icon(
-                        style: OutlinedButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          side: BorderSide(color: Colors.white.withValues(alpha: 0.5), width: 1.5),
-                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          textStyle: const TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        onPressed: () => _navigateToTemplates(context),
-                        icon: const Icon(Icons.grid_view_rounded, size: 20),
-                        label: const Text('Jelajahi template'),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+            child: HeroBanner(
+              onCreateDesign: () => _openEditor(context, designTemplates.first),
+              onBrowseTemplates: () => _navigateToTemplates(context),
             ),
           ),
 
@@ -387,97 +277,29 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
 
           // Template Grid
-          SliverPadding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            sliver: SliverGrid(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) {
-                  final template = _filteredTemplates[index];
-                  return TemplateCard(
-                    template: template,
-                    onTap: () => _openEditor(context, template),
-                  );
-                },
-                childCount: _filteredTemplates.length,
-              ),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                crossAxisSpacing: 18,
-                mainAxisSpacing: 20,
-                childAspectRatio: 0.7,
-              ),
-            ),
+          TemplateGrid(
+            templates: _filteredTemplates,
+            onTemplateTap: (template) => _openEditor(context, template),
           ),
 
           // Empty state
           if (_filteredTemplates.isEmpty)
             SliverFillRemaining(
               hasScrollBody: false,
-              child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(32),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          color: primaryColor.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                        child: Icon(
-                          Icons.search_off_rounded,
-                          size: 48,
-                          color: primaryColor.withValues(alpha: 0.6),
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      Text(
-                        'Tidak ada template ditemukan',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                          color: textPrimary,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 10),
-                      Text(
-                        _searchQuery.isNotEmpty
-                            ? 'Coba kata kunci pencarian yang lain'
-                            : 'Tidak ada template di kategori "$_selectedCategory"',
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: textSecondary,
-                          height: 1.5,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 24),
-                      if (_searchQuery.isNotEmpty || _selectedCategory != 'Semua')
-                        FilledButton.icon(
-                          onPressed: () {
-                            _searchController.clear();
-                            setState(() {
-                              _searchQuery = '';
-                              _selectedCategory = 'Semua';
-                            });
-                          },
-                          icon: const Icon(Icons.refresh_rounded),
-                          label: const Text('Reset Filter'),
-                          style: FilledButton.styleFrom(
-                            backgroundColor: primaryColor,
-                            foregroundColor: Colors.white,
-                            padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 14),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(14),
-                            ),
-                          ),
-                        ),
-                    ],
-                  ),
-                ),
+              child: EmptyState(
+                title: 'Tidak ada template ditemukan',
+                message: _searchQuery.isNotEmpty
+                    ? 'Coba kata kunci pencarian yang lain'
+                    : 'Tidak ada template di kategori "$_selectedCategory"',
+                onReset: _searchQuery.isNotEmpty || _selectedCategory != 'Semua'
+                    ? () {
+                        _searchController.clear();
+                        setState(() {
+                          _searchQuery = '';
+                          _selectedCategory = 'Semua';
+                        });
+                      }
+                    : null,
               ),
             ),
 
