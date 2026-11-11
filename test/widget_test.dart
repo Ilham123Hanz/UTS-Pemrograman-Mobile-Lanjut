@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:canva_ui_practice/main.dart';
+import 'package:projectutp_2407051007_ilhamkhoirulsaputra/main.dart';
 
 void main() {
   testWidgets('App loads and shows Canva branding', (WidgetTester tester) async {
