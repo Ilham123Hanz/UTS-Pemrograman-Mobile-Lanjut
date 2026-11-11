@@ -144,7 +144,7 @@ class DesignElement {
         'fontWeight': textStyle!.fontWeight?.index,
         'fontFamily': textStyle!.fontFamily,
         'fontStyle': textStyle!.fontStyle?.index,
-        'decoration': textStyle!.decoration != null ? textStyle!.decoration.toString() : null,
+        'decoration': textStyle!.decoration?.toString(),
         'decorationColor': textStyle!.decorationColor?.toARGB32(),
         'letterSpacing': textStyle!.letterSpacing,
         'height': textStyle!.height,

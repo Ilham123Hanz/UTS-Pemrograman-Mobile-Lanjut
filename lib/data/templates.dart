@@ -4,24 +4,24 @@ import '../models/design_element.dart';
 
 final designTemplates = <DesignTemplate>[
   // 1. Poster Kreatif - menggunakan poster_brand.jpg (branding/modern design)
-  DesignTemplate(
+  const DesignTemplate(
     id: 'poster_kreatif',
     title: 'Poster Kreatif',
     category: 'Poster',
     imagePath: 'assets/images/poster_brand.jpg',
     description: 'Poster modern untuk membagikan ide kreatif dan branding.',
     tags: ['modern', 'kreatif', 'branding', 'media sosial'],
-    canvasSize: const Size(800, 1067),
-    backgroundColor: const Color(0xFFF5F5F5),
+    canvasSize: Size(800, 1067),
+    backgroundColor: Color(0xFFF5F5F5),
     defaultElements: [
       DesignElement(
         id: 'title_text',
         type: ElementType.text,
-        position: const Offset(100, 150),
-        size: const Size(600, 120),
+        position: Offset(100, 150),
+        size: Size(600, 120),
         zIndex: 1,
         text: 'Judul Poster Anda',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF1A1A2E),
           fontSize: 48,
           fontWeight: FontWeight.w800,
@@ -34,11 +34,11 @@ final designTemplates = <DesignTemplate>[
       DesignElement(
         id: 'subtitle_text',
         type: ElementType.text,
-        position: const Offset(100, 280),
-        size: const Size(600, 80),
+        position: Offset(100, 280),
+        size: Size(600, 80),
         zIndex: 2,
         text: 'Subtitle atau deskripsi singkat di sini',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF4A4A6A),
           fontSize: 20,
           fontWeight: FontWeight.w400,
@@ -50,33 +50,33 @@ final designTemplates = <DesignTemplate>[
       DesignElement(
         id: 'accent_shape',
         type: ElementType.shape,
-        position: const Offset(350, 450),
-        size: const Size(100, 4),
+        position: Offset(350, 450),
+        size: Size(100, 4),
         zIndex: 0,
-        fillColor: const Color(0xFF7D2AE8),
+        fillColor: Color(0xFF7D2AE8),
         shapeType: ShapeType.rectangle,
       ),
     ],
   ),
   // 2. Kata Inspirasi - menggunakan poster_quote.jpg (quote/inspirational)
-  DesignTemplate(
+  const DesignTemplate(
     id: 'kata_inspirasi',
     title: 'Kata Inspirasi',
     category: 'Media Sosial',
     imagePath: 'assets/images/poster_quote.jpg',
     description: 'Desain kutipan inspiratif untuk media sosial.',
     tags: ['quote', 'inspirasi', 'motivasi', 'instagram', 'aesthetic'],
-    canvasSize: const Size(1080, 1080),
-    backgroundColor: const Color(0xFF1A1A2E),
+    canvasSize: Size(1080, 1080),
+    backgroundColor: Color(0xFF1A1A2E),
     defaultElements: [
       DesignElement(
         id: 'quote_text',
         type: ElementType.text,
-        position: const Offset(80, 300),
-        size: const Size(920, 300),
+        position: Offset(80, 300),
+        size: Size(920, 300),
         zIndex: 1,
         text: '"Jangan takut gagal, takutlah untuk tidak mencoba."',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Colors.white,
           fontSize: 42,
           fontWeight: FontWeight.w600,
@@ -90,11 +90,11 @@ final designTemplates = <DesignTemplate>[
       DesignElement(
         id: 'author_text',
         type: ElementType.text,
-        position: const Offset(80, 620),
-        size: const Size(920, 50),
+        position: Offset(80, 620),
+        size: Size(920, 50),
         zIndex: 2,
         text: '— Anonim',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFFB8B8D0),
           fontSize: 22,
           fontWeight: FontWeight.w400,
@@ -106,13 +106,13 @@ final designTemplates = <DesignTemplate>[
       DesignElement(
         id: 'decorative_line',
         type: ElementType.line,
-        position: const Offset(440, 580),
-        size: const Size(200, 2),
+        position: Offset(440, 580),
+        size: Size(200, 2),
         zIndex: 0,
-        lineStart: const Offset(0, 0),
-        lineEnd: const Offset(200, 0),
+        lineStart: Offset(0, 0),
+        lineEnd: Offset(200, 0),
         strokeWidth: 2,
-        borderColor: const Color(0xFF7D2AE8),
+        borderColor: Color(0xFF7D2AE8),
         strokeCap: StrokeCap.round,
       ),
     ],
@@ -128,14 +128,14 @@ final designTemplates = <DesignTemplate>[
     canvasSize: const Size(800, 1067),
     backgroundColor: const Color(0xFFFF6B35),
     defaultElements: [
-      DesignElement(
+      const DesignElement(
         id: 'event_title',
         type: ElementType.text,
-        position: const Offset(60, 120),
-        size: const Size(680, 150),
+        position: Offset(60, 120),
+        size: Size(680, 150),
         zIndex: 2,
         text: 'NAMA ACARA',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Colors.white,
           fontSize: 56,
           fontWeight: FontWeight.w900,
@@ -145,14 +145,14 @@ final designTemplates = <DesignTemplate>[
         ),
         textAlign: TextAlign.left,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'event_date',
         type: ElementType.text,
-        position: const Offset(60, 280),
-        size: const Size(680, 60),
+        position: Offset(60, 280),
+        size: Size(680, 60),
         zIndex: 2,
         text: 'Sabtu, 15 Maret 2025 • 19:00 WIB',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Colors.white,
           fontSize: 24,
           fontWeight: FontWeight.w500,
@@ -161,14 +161,14 @@ final designTemplates = <DesignTemplate>[
         ),
         textAlign: TextAlign.left,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'event_location',
         type: ElementType.text,
-        position: const Offset(60, 350),
-        size: const Size(680, 60),
+        position: Offset(60, 350),
+        size: Size(680, 60),
         zIndex: 2,
         text: 'Gedung Serbaguna, Jakarta',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Colors.white,
           fontSize: 20,
           fontWeight: FontWeight.w400,
@@ -187,14 +187,14 @@ final designTemplates = <DesignTemplate>[
         borderRadius: BorderRadius.circular(28),
         shapeType: ShapeType.roundedRectangle,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'cta_text',
         type: ElementType.text,
-        position: const Offset(60, 450),
-        size: const Size(200, 55),
+        position: Offset(60, 450),
+        size: Size(200, 55),
         zIndex: 4,
         text: 'DAFTAR SEKARANG',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFFFF6B35),
           fontSize: 16,
           fontWeight: FontWeight.w700,
@@ -216,14 +216,14 @@ final designTemplates = <DesignTemplate>[
     canvasSize: const Size(1080, 1350),
     backgroundColor: const Color(0xFFFDF2F8),
     defaultElements: [
-      DesignElement(
+      const DesignElement(
         id: 'product_title',
         type: ElementType.text,
-        position: const Offset(80, 180),
-        size: const Size(920, 100),
+        position: Offset(80, 180),
+        size: Size(920, 100),
         zIndex: 2,
         text: 'PRODUK ANDALAN',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF9D174D),
           fontSize: 52,
           fontWeight: FontWeight.w800,
@@ -233,14 +233,14 @@ final designTemplates = <DesignTemplate>[
         ),
         textAlign: TextAlign.center,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'product_subtitle',
         type: ElementType.text,
-        position: const Offset(80, 300),
-        size: const Size(920, 60),
+        position: Offset(80, 300),
+        size: Size(920, 60),
         zIndex: 2,
         text: 'Kualitas Terbaik untuk Kebutuhan Anda',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF7D1538),
           fontSize: 24,
           fontWeight: FontWeight.w400,
@@ -249,14 +249,14 @@ final designTemplates = <DesignTemplate>[
         ),
         textAlign: TextAlign.center,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'price_tag',
         type: ElementType.text,
-        position: const Offset(80, 450),
-        size: const Size(920, 60),
+        position: Offset(80, 450),
+        size: Size(920, 60),
         zIndex: 2,
         text: 'Mulai Rp 99.000',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFFBE185D),
           fontSize: 36,
           fontWeight: FontWeight.w700,
@@ -274,14 +274,14 @@ final designTemplates = <DesignTemplate>[
         borderRadius: BorderRadius.circular(60),
         shapeType: ShapeType.circle,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'discount_text',
         type: ElementType.text,
-        position: const Offset(780, 80),
-        size: const Size(120, 120),
+        position: Offset(780, 80),
+        size: Size(120, 120),
         zIndex: 2,
         text: '-25%',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Colors.white,
           fontSize: 28,
           fontWeight: FontWeight.w800,
@@ -292,24 +292,24 @@ final designTemplates = <DesignTemplate>[
     ],
   ),
   // 5. Portofolio/CV - menggunakan poster_resume.jpg (resume/portfolio)
-  DesignTemplate(
+  const DesignTemplate(
     id: 'portofolio',
     title: 'Portofolio / CV',
     category: 'Dokumen',
     imagePath: 'assets/images/poster_resume.jpg',
     description: 'Sampul portofolio profesional untuk karir.',
     tags: ['portfolio', 'cv', 'resume', 'profesional', 'karir', 'lamaran'],
-    canvasSize: const Size(800, 1067),
-    backgroundColor: const Color(0xFF0F172A),
+    canvasSize: Size(800, 1067),
+    backgroundColor: Color(0xFF0F172A),
     defaultElements: [
       DesignElement(
         id: 'portfolio_name',
         type: ElementType.text,
-        position: const Offset(80, 200),
-        size: const Size(640, 80),
+        position: Offset(80, 200),
+        size: Size(640, 80),
         zIndex: 2,
         text: 'NAMA ANDA',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Colors.white,
           fontSize: 48,
           fontWeight: FontWeight.w700,
@@ -322,11 +322,11 @@ final designTemplates = <DesignTemplate>[
       DesignElement(
         id: 'portfolio_role',
         type: ElementType.text,
-        position: const Offset(80, 290),
-        size: const Size(640, 50),
+        position: Offset(80, 290),
+        size: Size(640, 50),
         zIndex: 2,
         text: 'UI/UX Designer • Frontend Developer',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF94A3B8),
           fontSize: 20,
           fontWeight: FontWeight.w400,
@@ -338,11 +338,11 @@ final designTemplates = <DesignTemplate>[
       DesignElement(
         id: 'portfolio_bio',
         type: ElementType.text,
-        position: const Offset(80, 380),
-        size: const Size(640, 120),
+        position: Offset(80, 380),
+        size: Size(640, 120),
         zIndex: 2,
         text: 'Designer kreatif dengan 5+ tahun pengalaman membangun produk digital yang berdampak. Spesialisasi dalam desain sistem, prototyping, dan pengembangan frontend modern.',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFFCBD5E1),
           fontSize: 16,
           fontWeight: FontWeight.w400,
@@ -354,11 +354,11 @@ final designTemplates = <DesignTemplate>[
       DesignElement(
         id: 'contact_info',
         type: ElementType.text,
-        position: const Offset(80, 550),
-        size: const Size(640, 100),
+        position: Offset(80, 550),
+        size: Size(640, 100),
         zIndex: 2,
         text: '📧 email@domain.com  •  📱 +62 8xx-xxxx-xxxx  •  🌐 portfolio.web.id',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF64748B),
           fontSize: 14,
           fontWeight: FontWeight.w400,
@@ -370,10 +370,10 @@ final designTemplates = <DesignTemplate>[
       DesignElement(
         id: 'sidebar_bg',
         type: ElementType.shape,
-        position: const Offset(0, 0),
-        size: const Size(280, 1067),
+        position: Offset(0, 0),
+        size: Size(280, 1067),
         zIndex: 0,
-        fillColor: const Color(0xFF1E293B),
+        fillColor: Color(0xFF1E293B),
         shapeType: ShapeType.rectangle,
       ),
     ],
@@ -389,14 +389,14 @@ final designTemplates = <DesignTemplate>[
     canvasSize: const Size(1080, 1080),
     backgroundColor: const Color(0xFFFFF8E7),
     defaultElements: [
-      DesignElement(
+      const DesignElement(
         id: 'food_title',
         type: ElementType.text,
-        position: const Offset(80, 150),
-        size: const Size(920, 100),
+        position: Offset(80, 150),
+        size: Size(920, 100),
         zIndex: 2,
         text: 'NASI GORENG SPESIAL',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF7C2D12),
           fontSize: 52,
           fontWeight: FontWeight.w800,
@@ -406,14 +406,14 @@ final designTemplates = <DesignTemplate>[
         ),
         textAlign: TextAlign.center,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'food_desc',
         type: ElementType.text,
-        position: const Offset(80, 280),
-        size: const Size(920, 80),
+        position: Offset(80, 280),
+        size: Size(920, 80),
         zIndex: 2,
         text: 'Pedas • Gurih • Porsi Jumbo • Fresh Setiap Hari',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF9A3412),
           fontSize: 22,
           fontWeight: FontWeight.w500,
@@ -422,14 +422,14 @@ final designTemplates = <DesignTemplate>[
         ),
         textAlign: TextAlign.center,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'food_price',
         type: ElementType.text,
-        position: const Offset(80, 420),
-        size: const Size(920, 60),
+        position: Offset(80, 420),
+        size: Size(920, 60),
         zIndex: 2,
         text: 'Mulai Rp 25.000',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFFEA580C),
           fontSize: 38,
           fontWeight: FontWeight.w800,
@@ -447,14 +447,14 @@ final designTemplates = <DesignTemplate>[
         borderRadius: BorderRadius.circular(33),
         shapeType: ShapeType.roundedRectangle,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'order_button_text',
         type: ElementType.text,
-        position: const Offset(340, 550),
-        size: const Size(400, 65),
+        position: Offset(340, 550),
+        size: Size(400, 65),
         zIndex: 3,
         text: 'PESAN SEKARANG VIA GOFOOD/GRAB',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Colors.white,
           fontSize: 18,
           fontWeight: FontWeight.w700,
@@ -475,14 +475,14 @@ final designTemplates = <DesignTemplate>[
         borderRadius: BorderRadius.circular(33),
         shapeType: ShapeType.roundedRectangle,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'rating_text',
         type: ElementType.text,
-        position: const Offset(80, 550),
-        size: const Size(180, 65),
+        position: Offset(80, 550),
+        size: Size(180, 65),
         zIndex: 3,
         text: '⭐ 4.8 (1.2k ulasan)',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF92400E),
           fontSize: 14,
           fontWeight: FontWeight.w600,
@@ -493,24 +493,24 @@ final designTemplates = <DesignTemplate>[
     ],
   ),
   // 7. Poster Sosial - menggunakan poster_sosial.jpg (social media poster)
-  DesignTemplate(
+  const DesignTemplate(
     id: 'poster_sosial',
     title: 'Poster Media Sosial',
     category: 'Media Sosial',
     imagePath: 'assets/images/poster_sosial.jpg',
     description: 'Template poster untuk konten media sosial.',
     tags: ['instagram', 'facebook', 'media sosial', 'konten', 'post'],
-    canvasSize: const Size(1080, 1080),
-    backgroundColor: const Color(0xFFF5F5F5),
+    canvasSize: Size(1080, 1080),
+    backgroundColor: Color(0xFFF5F5F5),
     defaultElements: [
       DesignElement(
         id: 'social_title',
         type: ElementType.text,
-        position: const Offset(100, 150),
-        size: const Size(880, 120),
+        position: Offset(100, 150),
+        size: Size(880, 120),
         zIndex: 1,
         text: 'KONTEN VIRAL',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF1A1A2E),
           fontSize: 48,
           fontWeight: FontWeight.w800,
@@ -523,11 +523,11 @@ final designTemplates = <DesignTemplate>[
       DesignElement(
         id: 'social_subtitle',
         type: ElementType.text,
-        position: const Offset(100, 280),
-        size: const Size(880, 80),
+        position: Offset(100, 280),
+        size: Size(880, 80),
         zIndex: 2,
         text: 'Buat konten yang menarik dan engaging',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF4A4A6A),
           fontSize: 20,
           fontWeight: FontWeight.w400,
@@ -539,10 +539,10 @@ final designTemplates = <DesignTemplate>[
       DesignElement(
         id: 'social_shape',
         type: ElementType.shape,
-        position: const Offset(440, 450),
-        size: const Size(200, 4),
+        position: Offset(440, 450),
+        size: Size(200, 4),
         zIndex: 0,
-        fillColor: const Color(0xFF7D2AE8),
+        fillColor: Color(0xFF7D2AE8),
         shapeType: ShapeType.rectangle,
       ),
     ],
@@ -558,14 +558,14 @@ final designTemplates = <DesignTemplate>[
     canvasSize: const Size(1080, 1350),
     backgroundColor: const Color(0xFFEFF6FF),
     defaultElements: [
-      DesignElement(
+      const DesignElement(
         id: 'travel_title',
         type: ElementType.text,
-        position: const Offset(80, 180),
-        size: const Size(920, 100),
+        position: Offset(80, 180),
+        size: Size(920, 100),
         zIndex: 2,
         text: 'BALI DIARY 🌴',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF1E3A8A),
           fontSize: 56,
           fontWeight: FontWeight.w700,
@@ -574,14 +574,14 @@ final designTemplates = <DesignTemplate>[
         ),
         textAlign: TextAlign.center,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'travel_date',
         type: ElementType.text,
-        position: const Offset(80, 280),
-        size: const Size(920, 50),
+        position: Offset(80, 280),
+        size: Size(920, 50),
         zIndex: 2,
         text: '12 - 18 Agustus 2024',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF3B82F6),
           fontSize: 24,
           fontWeight: FontWeight.w500,
@@ -590,14 +590,14 @@ final designTemplates = <DesignTemplate>[
         ),
         textAlign: TextAlign.center,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'travel_location',
         type: ElementType.text,
-        position: const Offset(80, 340),
-        size: const Size(920, 50),
+        position: Offset(80, 340),
+        size: Size(920, 50),
         zIndex: 2,
         text: 'Ubud • Seminyak • Uluwatu • Nusa Penida',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF60A5FA),
           fontSize: 18,
           fontWeight: FontWeight.w400,
@@ -618,14 +618,14 @@ final designTemplates = <DesignTemplate>[
         borderRadius: BorderRadius.circular(24),
         shapeType: ShapeType.roundedRectangle,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'highlight_title',
         type: ElementType.text,
-        position: const Offset(100, 470),
-        size: const Size(880, 50),
+        position: Offset(100, 470),
+        size: Size(880, 50),
         zIndex: 2,
         text: 'MOMEN FAVORIT',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF1E40AF),
           fontSize: 24,
           fontWeight: FontWeight.w700,
@@ -634,14 +634,14 @@ final designTemplates = <DesignTemplate>[
         ),
         textAlign: TextAlign.center,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'highlight_text',
         type: ElementType.text,
-        position: const Offset(100, 530),
-        size: const Size(880, 100),
+        position: Offset(100, 530),
+        size: Size(880, 100),
         zIndex: 2,
         text: 'Sunrise di Gunung Batur 🌅 • Snorkeling di Nusa Penida 🐢\nKopi di cafe aesthetic Ubud ☕ • Sunset di Uluwatu Temple 🌅',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF3B82F6),
           fontSize: 16,
           fontWeight: FontWeight.w400,
@@ -663,14 +663,14 @@ final designTemplates = <DesignTemplate>[
     canvasSize: const Size(1280, 720),
     backgroundColor: const Color(0xFF0F172A),
     defaultElements: [
-      DesignElement(
+      const DesignElement(
         id: 'presentation_title',
         type: ElementType.text,
-        position: const Offset(120, 180),
-        size: const Size(1040, 120),
+        position: Offset(120, 180),
+        size: Size(1040, 120),
         zIndex: 2,
         text: 'JUDUL PRESENTASI / PROPOSAL',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Colors.white,
           fontSize: 56,
           fontWeight: FontWeight.w800,
@@ -680,14 +680,14 @@ final designTemplates = <DesignTemplate>[
         ),
         textAlign: TextAlign.left,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'presentation_subtitle',
         type: ElementType.text,
-        position: const Offset(120, 320),
-        size: const Size(1040, 80),
+        position: Offset(120, 320),
+        size: Size(1040, 80),
         zIndex: 2,
         text: 'Tagline yang menggambarkan esensi proyek Anda dalam satu kalimat yang kuat dan jelas.',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF94A3B8),
           fontSize: 24,
           fontWeight: FontWeight.w400,
@@ -696,14 +696,14 @@ final designTemplates = <DesignTemplate>[
         ),
         textAlign: TextAlign.left,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'presenter_info',
         type: ElementType.text,
-        position: const Offset(120, 520),
-        size: const Size(1040, 60),
+        position: Offset(120, 520),
+        size: Size(1040, 60),
         zIndex: 2,
         text: 'Dipersiapkan oleh: Nama Tim  •  Tanggal: Januari 2025  •  Versi 1.0',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF64748B),
           fontSize: 16,
           fontWeight: FontWeight.w400,
@@ -711,13 +711,13 @@ final designTemplates = <DesignTemplate>[
         ),
         textAlign: TextAlign.left,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'accent_bar',
         type: ElementType.shape,
-        position: const Offset(120, 295),
-        size: const Size(120, 5),
+        position: Offset(120, 295),
+        size: Size(120, 5),
         zIndex: 1,
-        fillColor: const Color(0xFF7D2AE8),
+        fillColor: Color(0xFF7D2AE8),
         shapeType: ShapeType.rectangle,
       ),
       DesignElement(
@@ -732,14 +732,14 @@ final designTemplates = <DesignTemplate>[
         borderRadius: BorderRadius.circular(16),
         shapeType: ShapeType.roundedRectangle,
       ),
-      DesignElement(
+      const DesignElement(
         id: 'logo_text',
         type: ElementType.text,
-        position: const Offset(1040, 60),
-        size: const Size(120, 120),
+        position: Offset(1040, 60),
+        size: Size(120, 120),
         zIndex: 3,
         text: 'LOGO',
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           color: Color(0xFF64748B),
           fontSize: 16,
           fontWeight: FontWeight.w600,

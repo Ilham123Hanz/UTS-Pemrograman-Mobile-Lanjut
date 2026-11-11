@@ -44,7 +44,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
     final borderColor = isDark ? const Color(0xFF3A3A4A) : const Color(0xFFE8E8EE);
     final textPrimary = isDark ? Colors.white : const Color(0xFF1A1A2E);
     final textSecondary = isDark ? const Color(0xFFB0B0B8) : const Color(0xFF6B6B80);
-    final primaryColor = const Color(0xFF7D2AE8);
+    const primaryColor = Color(0xFF7D2AE8);
 
     final filteredProjects = _getFilteredProjects();
 
@@ -488,7 +488,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(Icons.layers_rounded, size: 10, color: Colors.white),
+                            const Icon(Icons.layers_rounded, size: 10, color: Colors.white),
                             const SizedBox(width: 3),
                             Text(
                               '${project.elements.length} layer',
@@ -1093,7 +1093,7 @@ class _NewProjectSheet extends StatelessWidget {
                   return _TemplateOption(
                     title: ['Poster Kreatif', 'Kata Inspirasi', 'Poster Acara', 'Promosi Makanan'][index],
                     category: ['Poster', 'Media Sosial', 'Acara', 'Promosi'][index],
-                    color: [Color(0xFF7D2AE8), Color(0xFF1A1A2E), Color(0xFFFF6B35), Color(0xFFEA580C)][index],
+                    color: [const Color(0xFF7D2AE8), const Color(0xFF1A1A2E), const Color(0xFFFF6B35), const Color(0xFFEA580C)][index],
                     onTap: () => onCreate(DesignTemplate.legacy(
                       title: ['Poster Kreatif', 'Kata Inspirasi', 'Poster Acara', 'Promosi Makanan'][index],
                       category: ['Poster', 'Media Sosial', 'Acara', 'Promosi'][index],
