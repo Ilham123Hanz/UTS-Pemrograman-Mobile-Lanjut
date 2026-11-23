@@ -1780,7 +1780,7 @@ class SelectionHandlesPainter extends CustomPainter {
       ..style = PaintingStyle.fill;
     
     const handleSize = 12.0;
-    final handleRadius = handleSize / 2;
+    const handleRadius = handleSize / 2;
     
     // Draw bounding box
     final rect = Rect.fromLTWH(0, 0, size.width, size.height);
