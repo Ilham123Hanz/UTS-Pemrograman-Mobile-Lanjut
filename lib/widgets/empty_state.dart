@@ -21,7 +21,7 @@ class EmptyState extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final textPrimary = isDark ? Colors.white : const Color(0xFF1A1A2E);
     final textSecondary = isDark ? const Color(0xFFB0B0B8) : const Color(0xFF6B6B80);
-    final primaryColor = AppColors.primary;
+    const primaryColor = AppColors.primary;
 
     return Center(
       child: Padding(

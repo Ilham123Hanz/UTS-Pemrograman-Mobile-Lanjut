@@ -3,7 +3,6 @@ import '../data/templates.dart';
 import '../models/design_template.dart';
 import '../screens/editor_screen.dart';
 import '../screens/templates_screen.dart';
-import '../widgets/template_card.dart';
 import '../widgets/hero_banner.dart';
 import '../widgets/category_chips.dart';
 import '../widgets/template_grid.dart';
@@ -200,7 +199,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16),
-                        borderSide: BorderSide(color: primaryColor, width: 2),
+                        borderSide: const BorderSide(color: primaryColor, width: 2),
                       ),
                     ),
                   ),

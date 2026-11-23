@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../models/design_template.dart';
-import '../theme/app_colors.dart';
 import '../widgets/template_card.dart';
 
 /// Grid of template cards

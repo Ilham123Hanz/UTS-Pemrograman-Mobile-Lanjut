@@ -17,16 +17,16 @@ class HeroBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final primaryColor = AppColors.primary;
+    const primaryColor = AppColors.primary;
 
     return Container(
       margin: const EdgeInsets.fromLTRB(24, 16, 24, 0),
       padding: const EdgeInsets.all(28),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [primaryColor, const Color(0xFF4B61D1)],
+          colors: [primaryColor, Color(0xFF4B61D1)],
         ),
         borderRadius: BorderRadius.circular(28),
         boxShadow: [

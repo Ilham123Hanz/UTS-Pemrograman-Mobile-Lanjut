@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../theme/app_colors.dart';
 
 /// Horizontal scrollable category chips (ChoiceChips)
 class CategoryChips extends StatelessWidget {

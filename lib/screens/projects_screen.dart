@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../data/templates.dart';
 import '../models/design_template.dart';
 import '../models/design_project.dart';
 import '../screens/editor_screen.dart';
@@ -81,7 +80,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                           ),
                           child: Text(
                             '${_projects.length} proyek',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 13,
                               fontWeight: FontWeight.w600,
                               color: primaryColor,

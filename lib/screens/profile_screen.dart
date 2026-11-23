@@ -65,7 +65,7 @@ class ProfileScreen extends StatelessWidget {
                     children: [
                       const Text(
                         'Farrel Pratama',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.bold,
                           color: textDark,
